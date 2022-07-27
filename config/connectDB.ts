@@ -5,7 +5,8 @@ const connectDB = () => {
     console.log("already connected");
     return;
   }
-  mongoose.connect(process.env.DB_URL, {}, (error: any) => {
+  const db: any = process.env.DB_URL;
+  mongoose.connect(db, {}, (error: any) => {
     if (error) {
       throw error;
     }
